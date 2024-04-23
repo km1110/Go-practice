@@ -22,12 +22,3 @@ jobs:
         uses: golangci/golangci-lint-action@v4
         with:
           version: v1.54
-
-      - name: Install golangci-lint
-        run: |
-          curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s v1.54.0
-          sudo mv ./golangci-lint /usr/local/bin/golangci-lint
-          golangci-lint --version
-
-      - name: Run golangci-lint
-        run: golangci-lint run --timeout 5m
