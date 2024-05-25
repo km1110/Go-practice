@@ -27,3 +27,4 @@ jobs:
         with:
           version: v1.54
           args: ./...
+          working-directory: ./api
