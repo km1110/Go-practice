@@ -23,4 +23,4 @@ jobs:
         with:
           version: v1.54
         env:
-          GOLANGCI_LINT_RUN_EXTRA_ARGS: --path-prefix=./api
+          GOLANGCI_LINT_RUN_EXTRA_ARGS: --path-prefix=Go-practice/api
