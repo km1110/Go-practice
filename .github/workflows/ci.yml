@@ -13,14 +13,19 @@ jobs:
     name: lint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-go@v5
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
         with:
           go-version: "1.21"
           cache: false
+
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v4
         with:
           version: v1.54
-        env:
-          GOLANGCI_LINT_RUN_EXTRA_ARGS: --path-prefix=Go-practice/api
+
+      - run: |
+          golangci-lint run ./...
